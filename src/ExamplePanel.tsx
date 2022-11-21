@@ -3,14 +3,15 @@ import { useLayoutEffect, useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 
 import ReactPlayer from "./components/react-player/react-player";
-import InputGroup from "./components/input-group";
+// import InputGroup from "./components/input-group";
 
 function ExamplePanel({ context }: { context: PanelExtensionContext }): JSX.Element {
   const [_topics, setTopics] = useState<readonly Topic[] | undefined>();
   // const [setMessages] = useState<readonly MessageEvent<unknown>[] | undefined>();
   // useScript("main.js")
-  const [url, setUrl] = useState(null);
+  // const [url, setUrl] = useState<StringConstructor | undefined>();
   const [renderDone, setRenderDone] = useState<(() => void) | undefined>();
+  const url = "http://10.13.13.22:8083/stream/front/channel/0/webrtc?uuid=front/&channel=0";
   // const options={
   //   parentElement: document.getElementById('player')
   // };
@@ -40,9 +41,6 @@ function ExamplePanel({ context }: { context: PanelExtensionContext }): JSX.Elem
 <div className="container mt-3">
             <h3 className="text-center">Simple Example RTSPtoWEB player React</h3>
             <div className="row">
-                <div className="col-12">
-                    <InputGroup setUrl={setUrl}/>
-                </div>
                 <div className="col-12">
                     <div className="card">
                         <div className="card-header">

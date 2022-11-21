@@ -1,8 +1,8 @@
 import {useEffect, useRef, useState} from "react";
 import './react-player.css';
-import RTSPtoWEBPlayer from "rtsptowebplayer";
-import ControlButton from "../control-btn";
-
+const RTSPtoWEBPlayer = require("rtsptowebplayer");
+// import ControlButton from "../control-btn";
+    
 const ReactPlayer = ({url}) => {
 
     const playerElement = useRef(null);
@@ -40,7 +40,7 @@ const ReactPlayer = ({url}) => {
     return (<div className="player-wrapper">
         <div ref={playerElement}/>
         <div className="control">
-            <ControlButton type={state} onClick={playPause}/>
+            <button onClick={playPause}/>
         </div>
     </div>)
 }
